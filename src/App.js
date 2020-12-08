@@ -1,6 +1,6 @@
 import React from 'react';
 import { Fragment, useEffect, useState } from "react";
-import { indexDocuments } from "./api";
+import { autoCompleteQuery } from "./api";
 
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
 
   useEffect(() => {
 
-    indexDocuments(query)
+    autoCompleteQuery(query)
       .then(response => {
         console.log({ response });
         setResponse(response);

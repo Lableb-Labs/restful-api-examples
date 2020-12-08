@@ -68,3 +68,6 @@ There are two suggestion types:
 
 1. navigational: this type has a direct link for a post in your website.
 2. filter: this types has a list of filters which you should use in the search query if the user hits this suggestion.
+
+
+[Example Link @stackblitz](https://stackblitz.com/github/Lableb-Labs/restful-api-examples/tree/v2-auto-complete)
