@@ -1,4 +1,4 @@
-export function indexDocuments(query) {
+export function search(query) {
 
     const PROJECT_NAME = 'testperformance';
     const COLLECTION_NAME = 'posts';

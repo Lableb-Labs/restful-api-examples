@@ -86,3 +86,5 @@ http://api-bahuth.lableb.com/api/v2/projects/wptest/collections/posts/search/def
   }
 }
 ```
+
+[Example Link @stackblitz](https://stackblitz.com/github/Lableb-Labs/restful-api-examples/tree/v2-search)
