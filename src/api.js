@@ -1,4 +1,4 @@
-export function indexDocuments() {
+export function recommend() {
 
     const PROJECT_NAME = 'testperformance';
     const COLLECTION_NAME = 'posts';

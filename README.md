@@ -72,3 +72,5 @@ https://api-bahuth.lableb.com/api/v2/projects/wptest/collections/posts/recommend
   }
 }
 ```
+
+[Example Link @stackblitz](https://stackblitz.com/github/Lableb-Labs/restful-api-examples/tree/v2-recommendations)
