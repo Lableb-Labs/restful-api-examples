@@ -1,34 +1,28 @@
-export function indexDocuments() {
+export function indexDocuments(query) {
 
     const PROJECT_NAME = 'testperformance';
     const COLLECTION_NAME = 'posts';
-    const INDEXING_TOKEN = 'Mczn363962-P8Zab-fuwNHgBOll6FZlfE-F';
+    const SEARCH_TOKEN = 'MoByR5541043-ae6FxEOVJ-WSsx52jpn9hg3n';
+    const HANDLER_NAME = 'default';
 
-    const DOCUMENTS = [
-        {
-            "id": 1,
-            "title": "Lableb is awesome",
-            "content": "example content goes here",
-            "image": "https://mysite.com/static/images/lableb.png",
-            "url": "https://mysite.com/posts/lableb-is-awesome",
-            "tags": ["Fast", "Accurate"],
-            "category": ["Search", "Cloud"],
-            "authors": ["Lableb"],
-            "date": "2011-07-01T10:50:23Z"
-        }
-    ];
+    const queryParams = {
+        q: query,
+        skip: 0,
+        limit: 10,
+        session_id: '1c5Hb23', // generate unique random session id for each user
+        token: SEARCH_TOKEN
+    };
 
-    const URL = `https://192.99.17.57:30001/api/v2/projects/${PROJECT_NAME}/collections/${COLLECTION_NAME}/documents?token=${INDEXING_TOKEN}`;
+    const URL = `https://192.99.17.57:30001/api/v2/projects/${PROJECT_NAME}/collections/${COLLECTION_NAME}/search/${HANDLER_NAME}?${new URLSearchParams(queryParams)}`;
 
 
     return fetch(
         URL,
         {
-            method: 'POST',
-            body: JSON.stringify(DOCUMENTS),
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-            }
+            },
         })
         .then(response => response.json());
 }

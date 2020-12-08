@@ -1,73 +1,88 @@
-# Index Documents
+# Search
 
-**POST** */api/v2/projects/{project}/collections/{collection}/documents*
+
+> #### Notice !
+> Results are cached for 2 minutes and changes (like updating a document) will not be applied for the same query until 10 minutes pass.
+
+**GET** */api/v2/projects/{project}/collections/{collection}/search/{handler}*
 
 Where:
 
 - *{project}* is your project name, e.x *wptest*.
 - *{collection}* is the name of collection of documents you want to search in, e.x *posts*.
+- *{handler}* search handler name, e.x *default*.
 
 
 
-#### **Request body**:
 
-When you create a project on Lableb dashboard, your documents will have the following schema by default:
 
-<!-- prettier-ignore -->
-- *id*: a unique identifier for a document.
-- *title*: the document title.
-- *content*: the document content.
-- *image*: document image url.
-- *url*: document url on your site.
-- *tags*: an array of tags.
-- *category*: an array of categories.
-- *author*: an array of author names.
-- *date*: an **ISO-8601** date string.
+
+#### **Querystring parameters**:
+
+- *q*: the search query, e.x *?q=lableb*.
+- *filter*: a list of filters, e.x *?filter=meta:"Tech"&filter=meta:"Computer"*.
+- *skip*: how many documents to skip (used for pagination), e.x *?skip=10*.
+- *limit*: how many documents to fetch (used for pagination), e.x *?limit=5*.
+- *session_id*: a unique identifier for a user session, e.x *?session_id=1xHsxW342*.
+- *user_id*: a unique identifier for a user, e.x *?user_id=1*.
+- *user_ip*: user ip address, e.x *?user_ip=192.111.24.21*.
+- *user_country*: user country code, e.x *?user_country=DE*.
+
+
+
 
 
 #### **Example request**:
 
-POST */api/v2/projects/wptest/collections/posts/documents?token=qxDFI791xxxx-8wmxIBIONYiEK44PGnxxxxxx*
 
-##### **Body**:
 
 ```
-
-[
-    {    
-        "id": 1,
-        "title": "Lableb is awesome",
-        "content": "example contnet goes here",
-        "image": "https://mysite.com/static/images/lableb.png",
-        "url": "https://mysite.com/posts/lableb-is-awesome",
-        "tags": ["Fast", "Accurate"],
-        "category": ["Search", "Cloud"],
-        "authors": ["Lableb"],
-        "date": "2011-07-01T10:50:23Z"
-    }
-]
+http://api-bahuth.lableb.com/api/v2/projects/wptest/collections/posts/search/default
+  ?q=lableb
+  &skip=5
+  &limit=10
+  &session_id=1c4Hb23
+  &token=qxDFI791xxxx-8wmxIBIONYiEK44PGnxxxxxx
 ```
-
-
-
 
 
 
 
 #### **Example response**:
 
-```
+
+
+```json
 {
-    "time": 100,
-    "code": 200,
-    "response": null
+  "time": 11,
+  "code": 200,
+  "response": {
+    "found_documents": 53,
+    "results": [
+      {
+        "date": "2018-12-25T10:24:00.000+0000",
+        "image": "https://example.com/static/example.jpg",
+        "categories": ["Search"],
+        "id": "1",
+        "title": "Example title content",
+        "content": "Example post content",
+        "url": "http://mysite.com/posts/labelb-cloud-search/"
+      }
+    ],
+    "facets": {
+      "count": 3,
+      "categories": {
+        "buckets": [{ "value": "Search", "count": 3 }]
+      },
+      "tags": {
+        "buckets": [{ "value": "Tech", "count": 1 }]
+      },
+      "authors": { "buckets": [] },
+      "year": {
+        "buckets": [{ "value": 2019, "count": 5 }]
+      }
+    },
+    "spelling": null
+  }
 }
 ```
-
-
-
-
-
-## Update Indexed Documents
-
-To update indexed document, just re-index it with the same ID.
