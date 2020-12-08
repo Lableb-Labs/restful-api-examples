@@ -71,3 +71,6 @@ POST */api/v2/projects/wptest/collections/posts/documents?token=qxDFI791xxxx-8wm
 ## Update Indexed Documents
 
 To update indexed document, just re-index it with the same ID.
+
+
+[Example Link @stackblitz](https://stackblitz.com/github/Lableb-Labs/restful-api-examples/tree/v2-index-documents)
