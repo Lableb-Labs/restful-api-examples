@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment, useEffect, useState } from "react";
+import { indexDocuments } from "./api";
 
-function App() {
+
+export default function App() {
+
+
+  const [response, setResponse] = useState({});
+  const [error, setError] = useState(null);
+
+
+  useEffect(() => {
+
+    indexDocuments()
+      .then(response => {
+        console.log({ response });
+        setResponse(response);
+      })
+      .catch(error => {
+        console.log({ error });
+        setError({ error: error.toString() });
+      });
+
+  }, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <h1>Index Documents</h1>
+      <p>{'Response:'}</p>
+      <pre>
+        {!error ? JSON.stringify(response, undefined, 2) : null}
+      </pre>
+      <pre>
+        {error ? JSON.stringify(error, undefined, 2) : null}
+      </pre>
+    </Fragment>
   );
 }
 
-export default App;
