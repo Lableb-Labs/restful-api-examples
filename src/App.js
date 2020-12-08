@@ -29,7 +29,7 @@ export default function App() {
   return (
     <Fragment>
       <div>
-        <span>Search</span>
+        <span>Autocomplete</span>
 
         <input placeholder="Search..." value={query} onChange={event => setQuery(event.target.value)} />
       </div>
