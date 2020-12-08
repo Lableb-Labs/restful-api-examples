@@ -21,3 +21,6 @@ DELETE */api/v2/projects/wptest/collections/posts/documents/1?token=qxDFI791xxxx
   "response": "Deleted"
 }
 ```
+
+
+[Example Link @stackblitz](https://stackblitz.com/github/Lableb-Labs/restful-api-examples/tree/v2-delete-document)
