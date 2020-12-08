@@ -1,6 +1,6 @@
 import React from 'react';
 import { Fragment, useEffect, useState } from "react";
-import { indexDocuments } from "./api";
+import { deleteDocuments } from "./api";
 
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
 
   useEffect(() => {
 
-    indexDocuments()
+    deleteDocuments()
       .then(response => {
         console.log({ response });
         setResponse(response);
@@ -28,7 +28,7 @@ export default function App() {
   return (
     <Fragment>
       <div>
-        <span>Recommendations</span>
+        <span>Delete Document</span>
       </div>
 
       <p>{'Response:'}</p>
