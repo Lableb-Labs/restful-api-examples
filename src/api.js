@@ -1,5 +1,9 @@
 export function indexDocuments() {
 
+    /**
+     * Change to your project name and index token
+     * and insert the documents you want to be indexed by Lableb
+     */
     const PROJECT_NAME = 'restful-api-examples';
     const COLLECTION_NAME = 'posts';
     const INDEXING_TOKEN = 'kurwb7554701-snsyTRc6biMpHLKZziqVBU9l';
