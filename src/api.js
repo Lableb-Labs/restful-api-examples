@@ -1,8 +1,8 @@
 export function autoCompleteQuery(query) {
 
-    const PROJECT_NAME = 'testperformance';
+    const PROJECT_NAME = 'restful-api-examples';
     const COLLECTION_NAME = 'posts';
-    const SEARCH_TOKEN = 'MoByR5541043-ae6FxEOVJ-WSsx52jpn9hg3n';
+    const SEARCH_TOKEN = 'RAuiM5703795-oMd1VTfDZ5O8jGfDj0tjRPQt';
     const HANDLER_NAME = 'suggest';
 
     const queryParams = {
@@ -11,7 +11,7 @@ export function autoCompleteQuery(query) {
         token: SEARCH_TOKEN
     };
 
-    const URL = `https://192.99.17.57:30001/api/v2/projects/${PROJECT_NAME}/collections/${COLLECTION_NAME}/autocomplete/${HANDLER_NAME}?${new URLSearchParams(queryParams)}`;
+    const URL = `https://cse-prd.lableb.com/api/v2/projects/${PROJECT_NAME}/collections/${COLLECTION_NAME}/autocomplete/${HANDLER_NAME}?${new URLSearchParams(queryParams)}`;
 
 
     return fetch(
