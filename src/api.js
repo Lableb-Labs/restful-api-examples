@@ -1,9 +1,14 @@
 export function recommend() {
 
+    /**
+     * Chnage project info according to yours from Lableb's dashboard
+     */
     const PROJECT_NAME = 'restful-api-examples';
     const COLLECTION_NAME = 'posts';
     const SEARCH_TOKEN = 'RAuiM5703795-oMd1VTfDZ5O8jGfDj0tjRPQt';
     const HANDLER_NAME = 'recommend';
+
+    // choose the document Id that you want to get recommendations for
     const RELATED_DOCUMENTS_TO_DOCUMENT_ID = 1;
 
 
