@@ -1,10 +1,10 @@
 export function recommend() {
 
-    const PROJECT_NAME = 'testperformance';
+    const PROJECT_NAME = 'restful-api-examples';
     const COLLECTION_NAME = 'posts';
-    const SEARCH_TOKEN = 'MoByR5541043-ae6FxEOVJ-WSsx52jpn9hg3n';
+    const SEARCH_TOKEN = 'RAuiM5703795-oMd1VTfDZ5O8jGfDj0tjRPQt';
     const HANDLER_NAME = 'recommend';
-    const RELATED_DOCUMENTS_TO_DOCUMENT_ID = 204990;
+    const RELATED_DOCUMENTS_TO_DOCUMENT_ID = 1;
 
 
     const queryParams = {
@@ -14,7 +14,7 @@ export function recommend() {
     };
 
 
-    const URL = `https://192.99.17.57:30001/api/v2/projects/${PROJECT_NAME}/collections/${COLLECTION_NAME}/recommend/${HANDLER_NAME}?${new URLSearchParams(queryParams)}`;
+    const URL = `https://cse-prd.lableb.com/api/v2/projects/${PROJECT_NAME}/collections/${COLLECTION_NAME}/recommend/${HANDLER_NAME}?${new URLSearchParams(queryParams)}`;
 
 
     return fetch(
