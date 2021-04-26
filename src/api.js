@@ -1,9 +1,14 @@
 export function deleteDocuments() {
 
+    /**
+     * Chnage project info according to yours from Lableb's dashboard
+     */
     const PROJECT_NAME = 'restful-api-examples';
     const COLLECTION_NAME = 'posts';
     const INDEXING_TOKEN = 'kurwb7554701-snsyTRc6biMpHLKZziqVBU9l';
-    const TARGET_DOCUMENT_ID_TO_DELETE = 4;
+
+    // document id to be deleted
+    const TARGET_DOCUMENT_ID_TO_DELETE = 1111111;
 
 
     const queryParams = {
