@@ -1,5 +1,8 @@
 export function search(query) {
 
+    /**
+     * Chnage project info according to yours from Lableb's dashboard
+     */
     const PROJECT_NAME = 'restful-api-examples';
     const COLLECTION_NAME = 'posts';
     const SEARCH_TOKEN = 'RAuiM5703795-oMd1VTfDZ5O8jGfDj0tjRPQt';
